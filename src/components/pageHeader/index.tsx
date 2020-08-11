@@ -8,6 +8,7 @@ import './styles.css';
 
 interface PageHeaderProps {
     title: string; //Valor obrigatório, para não ser obrigatório colocaria um'?' em 'title?' para colocar um default.
+    description?: string; // { PROPS.description ? <p>{PROPS.description}</p> : null }
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (PROPS) => {
@@ -22,6 +23,7 @@ const PageHeader: React.FC<PageHeaderProps> = (PROPS) => {
 
             <div className="header-content">
                 <strong>{PROPS.title}</strong>
+                { PROPS.description && <p>{PROPS.description}</p> }
 
                 {PROPS.children}
             </div>
